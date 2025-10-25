@@ -1,4 +1,5 @@
 import { useState } from "react";
+import heroImage from "../public/hero-image.png";
 
 const SAMPLE_MARKDOWN = `# My Instagram Story
 
@@ -148,7 +149,7 @@ export function App() {
 						{/* Image */}
 						<div className="relative aspect-[3/2] md:aspect-auto">
 							<img
-								src="/public/hero-image.png"
+								src={heroImage}
 								alt="Markdown to Instagram Stories Preview"
 								className="h-full w-full object-cover"
 							/>
