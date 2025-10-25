@@ -14,17 +14,17 @@ body {
 		"Helvetica Neue",
 		Arial,
 		sans-serif;
-	font-size: 34px;
-	line-height: 1.1;
+	font-size: 38px;
+	line-height: 1.2;
 	color: #1a1a1a;
 	background: #ffffff;
-	padding: 250px 48px; /* 13% vertical padding for IG Stories safe zone */
-	width: 1080px;
+	padding: 0; /* Padding handled by @page margins */
+	width: 100%; /* Let @page margins define the content width */
 }
 
 /* Headings */
 h1 {
-	font-size: 77px;
+	font-size: 84px;
 	font-weight: 700;
 	margin: 60px 0 24px 0;
 	line-height: 1.1;
@@ -38,7 +38,7 @@ h1:first-child {
 }
 
 h2 {
-	font-size: 62px;
+	font-size: 68px;
 	font-weight: 700;
 	margin: 48px 0 20px 0;
 	line-height: 1.1;
@@ -46,7 +46,7 @@ h2 {
 }
 
 h3 {
-	font-size: 50px;
+	font-size: 56px;
 	font-weight: 600;
 	margin: 36px 0 16px 0;
 	line-height: 1.1;
@@ -56,7 +56,7 @@ h3 {
 h4,
 h5,
 h6 {
-	font-size: 41px;
+	font-size: 46px;
 	font-weight: 600;
 	margin: 16px 0 8px 0;
 	line-height: 1.1;
@@ -93,7 +93,7 @@ blockquote {
 /* Code */
 code {
 	font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
-	font-size: 29px;
+	font-size: 32px;
 	background: #f5f5f5;
 	padding: 2px 6px;
 	border-radius: 3px;
@@ -146,5 +146,5 @@ i {
 /* Page breaks for PDF export */
 @page {
 	size: 11.25in 20in; /* 1080x1920px at 96 DPI */
-	margin: 0; /* No page margins - body padding handles spacing */
+	margin: 2in 0.5in; /* 10% safe zone for IG Stories UI chrome (top/bottom: ~192px, sides: 48px) */
 }
