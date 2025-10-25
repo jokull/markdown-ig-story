@@ -1,0 +1,34 @@
+{
+  "name": "markdown-ig-story",
+  "version": "1.0.0",
+  "description": "Convert markdown to Instagram story-sized PNG images (1080x1920px)",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "markdown-ig-story": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && cp src/styles.css dist/",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write src/",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
+  },
+  "keywords": ["markdown", "image", "social-media", "instagram", "cli"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.1",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
+    "eslint": "^9.12.0",
+    "prettier": "^3.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
