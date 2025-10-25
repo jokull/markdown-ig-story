@@ -96,12 +96,64 @@ export function App() {
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
 			<div className="container mx-auto max-w-6xl px-4 py-8">
-				{/* Header */}
-				<div className="mb-12 text-center">
-					<h1 className="mb-4 text-5xl font-bold text-gray-900">Markdown → Instagram Stories</h1>
-					<p className="text-xl text-gray-600">
-						Convert your markdown into beautiful Instagram story images
-					</p>
+				{/* Hero Section */}
+				<div className="mb-12 overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 to-blue-600 shadow-2xl">
+					<div className="grid items-center gap-8 md:grid-cols-2">
+						{/* Text Content */}
+						<div className="p-8 md:p-12">
+							<h1 className="mb-4 text-4xl leading-tight font-bold text-white md:text-5xl lg:text-6xl">
+								Markdown → Instagram Stories
+							</h1>
+							<p className="mb-6 text-lg text-purple-100 md:text-xl">
+								Transform your markdown into stunning Instagram story images in seconds. Perfect for
+								content creators, bloggers, and social media managers.
+							</p>
+							<div className="flex flex-wrap gap-4 text-sm text-purple-200">
+								<div className="flex items-center gap-2">
+									<svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth={2}
+											d="M5 13l4 4L19 7"
+										/>
+									</svg>
+									<span>1080×1920px Perfect Fit</span>
+								</div>
+								<div className="flex items-center gap-2">
+									<svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth={2}
+											d="M5 13l4 4L19 7"
+										/>
+									</svg>
+									<span>Auto Page Splitting</span>
+								</div>
+								<div className="flex items-center gap-2">
+									<svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth={2}
+											d="M5 13l4 4L19 7"
+										/>
+									</svg>
+									<span>Instant Preview</span>
+								</div>
+							</div>
+						</div>
+
+						{/* Image */}
+						<div className="relative aspect-[3/2] md:aspect-auto">
+							<img
+								src="/public/hero-image.png"
+								alt="Markdown to Instagram Stories Preview"
+								className="h-full w-full object-cover"
+							/>
+						</div>
+					</div>
 				</div>
 
 				{/* Main Form */}
