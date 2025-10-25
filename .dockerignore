@@ -1,0 +1,11 @@
+node_modules
+dist
+out
+*.log
+.git
+.gitignore
+README.md
+.DS_Store
+*.md
+!package.json
+!bun.lock
