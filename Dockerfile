@@ -26,6 +26,19 @@ RUN apt-get update && apt-get install -y \
 # Install Weasyprint
 RUN pip3 install --no-cache-dir --break-system-packages weasyprint
 
+# Install Inter font
+RUN apt-get update && apt-get install -y \
+	wget \
+	&& wget -O /tmp/inter.zip https://github.com/rsms/inter/releases/download/v4.0/Inter-4.0.zip \
+	&& mkdir -p /usr/share/fonts/truetype/inter \
+	&& unzip /tmp/inter.zip -d /tmp/inter \
+	&& find /tmp/inter -name "*.ttf" -exec cp {} /usr/share/fonts/truetype/inter/ \; \
+	&& fc-cache -f -v \
+	&& rm -rf /tmp/inter.zip /tmp/inter \
+	&& apt-get remove -y wget \
+	&& apt-get autoremove -y \
+	&& rm -rf /var/lib/apt/lists/*
+
 # Install Bun
 RUN curl -fsSL https://bun.sh/install | bash
 
