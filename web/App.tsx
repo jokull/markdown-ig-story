@@ -98,18 +98,18 @@ export function App() {
 		<div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
 			<div className="container mx-auto max-w-6xl px-4 py-8">
 				{/* Hero Section */}
-				<div className="mb-12 overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 to-blue-600 shadow-2xl">
+				<div className="mb-12 overflow-hidden">
 					<div className="grid items-center gap-8 md:grid-cols-2">
 						{/* Text Content */}
-						<div className="p-8 md:p-12">
-							<h1 className="mb-4 text-4xl leading-tight font-bold text-white md:text-5xl lg:text-6xl">
+						<div>
+							<h1 className="mb-4 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
 								Markdown → Instagram Stories
 							</h1>
-							<p className="mb-6 text-lg text-purple-100 md:text-xl">
+							<p className="mb-6 text-lg md:text-xl">
 								Transform your markdown into stunning Instagram story images in seconds. Perfect for
 								content creators, bloggers, and social media managers.
 							</p>
-							<div className="flex flex-wrap gap-4 text-sm text-purple-200">
+							<div className="flex flex-wrap gap-4 text-sm">
 								<div className="flex items-center gap-2">
 									<svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path
@@ -147,7 +147,7 @@ export function App() {
 						</div>
 
 						{/* Image */}
-						<div className="relative aspect-[3/2] md:aspect-auto">
+						<div className="relative aspect-3/2 md:aspect-auto">
 							<img
 								src={heroImage}
 								alt="Markdown to Instagram Stories Preview"
@@ -187,7 +187,7 @@ export function App() {
 									type="button"
 									onClick={handlePreview}
 									disabled={previewLoading || downloadLoading || !markdown.trim()}
-									className="transform rounded-xl bg-gradient-to-r from-green-600 to-teal-600 px-6 py-3 font-semibold text-white transition-all hover:scale-105 hover:from-green-700 hover:to-teal-700 focus:ring-4 focus:ring-green-300 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
+									className="transform rounded-xl bg-linear-to-r from-green-600 to-teal-600 px-6 py-3 font-semibold text-white transition-all hover:scale-105 hover:from-green-700 hover:to-teal-700 focus:ring-4 focus:ring-green-300 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
 								>
 									{previewLoading ? (
 										<span className="flex items-center">
@@ -221,7 +221,7 @@ export function App() {
 									type="button"
 									onClick={handleDownload}
 									disabled={previewLoading || downloadLoading || !markdown.trim()}
-									className="transform rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 font-semibold text-white transition-all hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:ring-4 focus:ring-purple-300 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
+									className="transform rounded-xl bg-linear-to-r from-purple-600 to-blue-600 px-6 py-3 font-semibold text-white transition-all hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:ring-4 focus:ring-purple-300 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
 								>
 									{downloadLoading ? (
 										<span className="flex items-center">
@@ -264,7 +264,7 @@ export function App() {
 							<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 								{previewImages.map((image) => (
 									<div key={image.index} className="space-y-3">
-										<div className="relative aspect-[9/16] overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+										<div className="relative aspect-9/16 overflow-hidden rounded-xl bg-gray-100 shadow-lg">
 											<img
 												src={image.dataUrl}
 												alt={`Story ${image.index}`}
