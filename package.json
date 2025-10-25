@@ -1,34 +1,48 @@
 {
-  "name": "markdown-ig-story",
-  "version": "1.0.0",
-  "description": "Convert markdown to Instagram story-sized PNG images (1080x1920px)",
-  "type": "module",
-  "main": "dist/index.js",
-  "bin": {
-    "markdown-ig-story": "dist/index.js"
-  },
-  "scripts": {
-    "build": "tsc && cp src/styles.css dist/",
-    "dev": "ts-node src/index.ts",
-    "start": "node dist/index.js",
-    "typecheck": "tsc --noEmit",
-    "format": "prettier --write src/",
-    "lint": "eslint src/",
-    "lint:fix": "eslint src/ --fix"
-  },
-  "keywords": ["markdown", "image", "social-media", "instagram", "cli"],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "commander": "^12.1.0"
-  },
-  "devDependencies": {
-    "@types/node": "^22.8.1",
-    "@typescript-eslint/eslint-plugin": "^8.6.0",
-    "@typescript-eslint/parser": "^8.6.0",
-    "eslint": "^9.12.0",
-    "prettier": "^3.1.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
-  }
+	"name": "markdown-ig-story",
+	"version": "1.0.0",
+	"description": "Convert markdown to Instagram story-sized PNG images (1080x1920px)",
+	"type": "module",
+	"main": "dist/index.js",
+	"bin": {
+		"markdown-ig-story": "dist/index.js"
+	},
+	"scripts": {
+		"build": "tsc && cp src/styles.css dist/",
+		"build:cli": "tsc && cp src/styles.css dist/",
+		"dev": "bun server.ts",
+		"dev:cli": "ts-node src/index.ts",
+		"start": "node dist/index.js",
+		"typecheck": "tsc --noEmit",
+		"format": "prettier --write .",
+		"lint": "oxlint .",
+		"lint:fix": "oxlint --fix ."
+	},
+	"keywords": [
+		"markdown",
+		"image",
+		"social-media",
+		"instagram",
+		"cli"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"adm-zip": "^0.5.16",
+		"commander": "^14.0.2",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0"
+	},
+	"devDependencies": {
+		"@types/node": "^24.9.1",
+		"@types/react": "^19.2.2",
+		"@types/react-dom": "^19.2.2",
+		"bun-plugin-tailwind": "^0.1.0",
+		"oxlint": "^1.24.0",
+		"prettier": "^3.1.1",
+		"prettier-plugin-tailwindcss": "^0.7.1",
+		"tailwindcss": "^4.0.0",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.3"
+	}
 }

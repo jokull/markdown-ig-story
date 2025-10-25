@@ -2,33 +2,54 @@
 
 Convert markdown to Instagram story-sized PNG images (1080x1920px) perfect for sharing on social media.
 
+Includes both a **web UI** and a **CLI tool**.
+
 ## Requirements
 
-- Node.js
+- [Bun](https://bun.sh) (for web UI) or Node.js (for CLI only)
 - [Pandoc](https://pandoc.org/installing.html) - For markdown to PDF conversion
 - [Weasyprint](https://weasyprint.org/) - PDF engine for pandoc
 - [Poppler](https://poppler.freedesktop.org/) - For PDF to image conversion (provides `pdftoppm`)
 
 On macOS, you can install all requirements with Homebrew:
+
 ```bash
-brew install pandoc weasyprint poppler
+brew install bun pandoc weasyprint poppler
 ```
 
 ## Installation
 
 ```bash
+bun install
+# or
 npm install
-npm run build
 ```
 
 ## Usage
 
-Pipe markdown content to stdin:
+### Web UI (Recommended)
+
+Start the web server:
 
 ```bash
-cat example.md | npm start
+bun run dev
+```
 
-# Or with options:
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
+
+Features:
+
+- 🎨 Beautiful, modern interface
+- 📝 Live markdown editing
+- 📦 Downloads ZIP file with all images
+- 🔄 Hot reloading during development
+
+### CLI
+
+Build and use the command-line tool:
+
+```bash
+npm run build:cli
 cat example.md | npm start -- --output ./output --prefix my-story
 ```
 
@@ -57,11 +78,33 @@ cat example.md | npm start -- --output ./output --prefix my-story
 
 The tool uses a default CSS stylesheet optimized for social media consumption. Font sizes, spacing, and colors are carefully chosen for readability on mobile devices.
 
+## Project Structure
+
+```
+markdown-ig-story/
+├── src/              # Core library (CLI + shared code)
+│   ├── index.ts      # CLI entry point
+│   ├── renderer.ts   # Markdown → Image converter
+│   └── styles.css    # Instagram story CSS styling
+├── web/              # Web UI frontend (React)
+│   ├── App.tsx       # Main React component
+│   ├── main.tsx      # React entry point
+│   └── styles.css    # Tailwind CSS
+├── public/           # Static assets
+│   └── index.html    # HTML template
+├── server.ts         # Bun fullstack server
+├── bunfig.toml       # Bun config (Tailwind plugin)
+└── package.json      # Dependencies and scripts
+```
+
 ## Development
 
 ```bash
-# Build TypeScript
-npm run build
+# Start web UI dev server
+bun run dev
+
+# Build CLI tool
+npm run build:cli
 
 # Type check
 npm run typecheck
