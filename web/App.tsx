@@ -345,32 +345,14 @@ export function App() {
 				{/* Footer */}
 				<div className="mt-12 text-center text-gray-600">
 					<p>
-						Made with ❤️ using{" "}
+						Made by{" "}
 						<a
-							href="https://bun.sh"
+							href="https://solberg.is"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="font-medium text-purple-600 hover:text-purple-700"
 						>
-							Bun
-						</a>
-						,{" "}
-						<a
-							href="https://pandoc.org"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="font-medium text-purple-600 hover:text-purple-700"
-						>
-							Pandoc
-						</a>
-						{" & "}
-						<a
-							href="https://weasyprint.org"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="font-medium text-purple-600 hover:text-purple-700"
-						>
-							Weasyprint
+							solberg.is
 						</a>
 					</p>
 				</div>
